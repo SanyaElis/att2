@@ -36,13 +36,15 @@ def count_spectrum(signal, dur, acc):
     return tf, xf
 
 
-t1, x1 = count_meander(1.0, 7, 5)
+t1, x1 = count_meander(1.0, 1, 5)
 t2, x2 = count_cos(1.0, 5, 5, 0)
 
 x3 = [x * y for x, y in zip(x1, x2)]
 sig = t2, x3
 t4, x4 = count_spectrum(sig, 5, accuracy)
 
+
+plt.figure(figsize=(12, 10))
 plt.subplot(411)
 plt.plot(t1, x1)
 plt.subplot(412)
